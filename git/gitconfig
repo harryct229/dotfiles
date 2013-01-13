@@ -1,0 +1,75 @@
+[user]
+	name = Tung Dao
+	email = me@tungdao.com
+[credential]
+	helper = gnome-keyring
+[github]
+  user = tungd
+[core]
+	excludesfile = ~/.gitignore
+	whitespace = trailing-space,space-before-tab
+[color]
+  ui = auto
+[branch]
+	autosetupmerge = true
+[branch "master"]
+  mergeoptions =--no-ff
+[branch "dev"]
+  mergeoptions =--no-ff
+[branch "development"]
+  mergeoptions =--no-ff
+[advice]
+	statusHints = false
+[push]
+	default = tracking
+[merge]
+	stat = true
+[rerere]
+	enabled = true
+[diff]
+	renames = copies
+[apply]
+	whitespace = nowarn
+[alias]
+  st = status -sb
+  ci = commit
+  ps = push
+  pl = pull
+  br = branch
+  co = checkout
+  df = diff
+  cl = clone
+  dfc = diff --cached
+  addall = add -A
+  aa = add -A
+  ap = add --patch
+  amend = commit --amend
+  undo = reset --soft HEAD^
+  rank = !$HOME/cli/bin/git-rank-contributers
+  count = shortlog -sn
+  conflicts = diff --name-only --diff-filter=U
+  ls = log --oneline --decorate
+  lg = log --graph --all --decorate
+  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+  ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+  lf = log -u
+  lc = ls-files -u | awk '{print $4}' | sort -u
+  dl = log --numstat -1
+  dlc = diff --cached HEAD^
+  ignore = update-index --assume-unchanged
+  unignore = update-index --no-assume-unchanged
+  ignored = "!git ls-files -v | grep ^h | cut -c 3-"
+  bempty = checkout --orphan
+  snap = clone --depth 1
+[url "git://github.com/"]
+  insteadOf = gh:
+[url "git@github.com:"]
+  insteadOf = wgh:
+[url "git@bitbucket.org:"]
+  insteadOf = bb:
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "sourcetree"]
+	cmd = /Users/tung/Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

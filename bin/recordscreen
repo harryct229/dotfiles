@@ -1,0 +1,5 @@
+#!/bin/bash
+ffmpeg -threads 3 \
+  -f x11grab -r 30 -s 1280x720 -i :0.0+0,0 -vcodec libvpx -vb 5000k \
+  -f alsa -acodec aac -ab 320k -i pulse \
+  $HOME/$(date +%Y%m%d_%H%M%S)_raw.webm

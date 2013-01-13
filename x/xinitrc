@@ -1,0 +1,46 @@
+#!/bin/sh
+
+if [ -d /etc/X11/xinit/xinitrc.d ]; then
+  for f in /etc/X11/xinit/xinitrc.d/*; do
+    [ -x "$f" ] && . "$f"
+  done
+  unset f
+fi
+
+sessionfile=`find "${HOME}/.dbus/session-bus/" -maxdepth 1 -type f`
+if [ -f "$sessionfile" ] ; then
+  if grep -q "^DBUS_SESSION_BUS_ADDRESS=" "${sessionfile}" ; then
+    export `grep "^DBUS_SESSION_BUS_ADDRESS=" "${sessionfile}"`
+  fi
+fi
+
+# Gnome Settings Daemon
+/usr/lib/gnome-settings-daemon/gnome-settings-daemon &
+
+# Start GNOME Keyring
+# eval $(/usr/bin/gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh)
+export SSH_AUTH_SOCK
+export GPG_AGENT_INFO
+export GNOME_KEYRING_CONTROL
+export GNOME_KEYRING_PID
+
+# Ibus
+# export GTK_IM_MODULE=ibus
+# export XMODIFIERS=@im=ibus
+# export QT_IM_MODULE=ibus
+
+# ibus-daemon -drx
+
+# thunar --daemon &
+# emacs --daemon &
+# kupfer &
+
+# dropboxd &
+# compton -e 1 -b &
+
+# [[ -f $HOME/.Xresources ]] && xrdb -merge $HOME/.Xresources &
+# xmodmap $HOME/.xmodmap &
+# xcape -e 'Control_R=Escape' &
+
+wmname LG3D
+exec awesome

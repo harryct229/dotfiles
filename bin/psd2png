@@ -1,0 +1,16 @@
+#!/bin/bash
+
+for file in *.psd; do
+  name=${file%.psd}
+
+  # full image
+  convert "$name.psd[0]" "$name.png"
+
+  # layers
+  mkdir $name
+  cp $file $name
+  cd $name
+  convert "$name.psd" "$name.png"
+  rm "$name.psd"
+  cd ..
+done

@@ -1,0 +1,14 @@
+#!/bin/bash
+for local in {Archive,Backup}; do
+  rsync -vaz --exclude=.DS_Store /Volumes/Local/$local/ /Volumes/Data/$local
+done
+
+for local in {Photoshop,Flash,Fonts,Web}; do
+  rsync -vaz --exclude=.DS_Store /Volumes/Local/$local/ /Volumes/Data/Setup/$local
+done
+
+for local in {Documents,Pictures,Movies}; do
+  rsync -vaz --exclude=.DS_Store ~/$local/ /Volumes/Data/$local
+done
+
+rsync -vaz --exclude=.DS_Store /Volumes/Local/Setup/ /Volumes/Data/Setup

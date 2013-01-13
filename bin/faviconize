@@ -1,0 +1,8 @@
+#!/bin/sh
+
+convert $1 -resize 16x16 favicon16.png
+convert $1 -resize 32x32 favicon32.png
+convert $1 -resize 48x48 favicon48.png
+convert $1 -resize 64x64 favicon64.png
+convert favicon16.png favicon32.png favicon48.png favicon64.png -colors 256 favicon.ico
+rm favicon16.png favicon32.png favicon48.png favicon64.png

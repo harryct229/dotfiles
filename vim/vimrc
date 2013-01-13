@@ -1,0 +1,12 @@
+" Vim configuration
+" Tung Dao <me@tungdao.com>
+
+
+" Bundle
+set nocompatible
+runtime bundle/vim-unbundle/unbundle.vim
+let $PATH=$HOME.'/.rbenv/shims/:'.$HOME.'/local/bin/:'.$PATH
+
+" Config
+runtime! config/**/*.vim
+

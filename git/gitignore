@@ -1,0 +1,30 @@
+.DS_Store
+.svn
+.bzr
+.hg
+*.sw?
+.netrwhist
+*.elc
+*.esproj
+*.tmproj
+*.pyc
+*.o
+*.log
+*.so
+*~
+\#*\#
+Gemfile.lock
+.rspec
+*tags*
+!.gitkeep
+tmp
+*.orig
+
+# Project specific
+# Procfile
+Procfile.local
+# Watchr
+.sass-cache
+.env
+repl-port
+.\#*

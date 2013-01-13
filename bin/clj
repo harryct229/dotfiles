@@ -1,0 +1,12 @@
+#!/bin/sh
+# Clojure wrapper script.
+# With no arguments runs Clojure's REPL.
+
+# Put the Clojure jar from the cellar and the current folder in the classpath.
+CLOJURE=$CLASSPATH:#{prefix}/#{jar}:${PWD}
+
+if [ "$#" -eq 0 ]; then
+  java -cp "$CLOJURE" clojure.main --repl
+else
+  java -cp "$CLOJURE" clojure.main "$@"
+fi

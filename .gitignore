@@ -1,0 +1,15 @@
+vim/.VimballRecord
+vim/tmp/swap/*
+vim/tmp/backup/*
+vim/tmp/undo/*
+vim/bundle/
+vim/ftbundle/
+emacs/backups/
+emacs/*elpa/
+emacs/*.dat
+emacs/bookmarks/
+emacs/tramp
+emacs/data
+emacs/auto-save-list/
+ch/sheets/*
+minimal-session-saver-data.el

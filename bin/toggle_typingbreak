@@ -1,0 +1,7 @@
+#!/bin/sh
+
+SCHEMA="org.gnome.settings-daemon.plugins.typing-break active"
+val=$(gsettings get $SCHEMA)
+[[ $val = "true" ]] && val="false" || val="true"
+
+gsettings set $SCHEMA $val

@@ -1,0 +1,82 @@
+#!/usr/bin/env ruby
+# encoding: utf-8
+
+# Format: ["github repo"[, "filetype"][, "branch/tag/commit sha"]]
+bundles = [
+  ["sunaku/vim-unbundle"],
+
+  # UI
+  # ["Lokaltog/vim-powerline"],
+
+  # Editing
+  ["tpope/vim-eunuch"],
+  ["tpope/vim-fugitive"],
+  ["tpope/vim-repeat"],
+  ["tpope/vim-surround"],
+  ["scrooloose/nerdtree"],
+  ["scrooloose/nerdcommenter"],
+  ["kana/vim-smartinput"],
+  ["godlygeek/tabular"],
+  ["mileszs/ack.vim"],
+  ["kien/ctrlp.vim"],
+  ["AndrewRadev/splitjoin.vim"],
+
+  # Ruby
+  ["tpope/vim-rails", "ruby"],
+  ["vim-ruby/vim-ruby", "ruby"],
+
+  # PHP
+  ["donnut/vim-php54-syntax", "php"],
+
+  # JS/CoffeeScript/TypeScript
+  ["pangloss/vim-javascript", "javascript"],
+  ["itspriddle/vim-jquery", "javascript"],
+  ["kchmck/vim-coffee-script", "coffee"],
+
+  # Ragel
+  ["jayferd/ragel.vim", "ragel"],
+
+  # Clojure
+  ["guns/vim-clojure-static", "clojure"],
+  ["tpope/vim-foreplay", "clojure"],
+
+  # CSS/SASS
+  ["tpope/vim-haml"],
+  ["hail2u/vim-css3-syntax", "css"],
+
+  # HTML/Markdown
+  ["vim-pandoc/vim-pandoc", "pandoc"],
+  ["othree/html5.vim", "html"],
+  ["mattn/zencoding-vim"]
+]
+
+require 'fileutils'
+require 'open-uri'
+
+bundle_dir = File.join(ENV["HOME"], ".vim", "bundle")
+ftbundle_dir = File.join(ENV["HOME"], ".vim", "ftbundle")
+
+bundles.each do |b|
+  FileUtils.cd(bundle_dir)
+
+  repo, ft, co = b
+  dir = repo.split('/').last
+
+  if ft
+    ft_dir = File.join(ftbundle_dir, ft)
+    FileUtils.mkdir(ft_dir) if !File.directory? ft_dir
+    FileUtils.cd(ft_dir)
+  end
+
+  if File.directory? dir
+    puts " Updating #{dir}"
+    FileUtils.cd(dir)
+    `git fetch origin && git reset --hard origin/master`
+  else
+    puts " Installing #{dir}"
+    `git clone https://github.com/#{repo}.git`
+  end
+
+  `git checkout #{co}` if co
+end
+

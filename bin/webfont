@@ -1,0 +1,31 @@
+#!/bin/bash
+
+orig_name=${1%.*}
+orig_ext=${1##*.}
+
+ttf_font=$orig_name."ttf"
+eot_font=$orig_name."eot"
+woff_font=$orig_name."woff"
+
+if [ $orig_ext == 'ttf' ]; then
+  echo "Backing up TTF font"
+  mv $1{,.orig}
+fi
+
+fontforge -c "
+import fontforge
+
+orig = fontforge.open('$1')
+
+ttf = orig.generate('$ttf_font')
+ttf.save()
+
+woff = orig.generate('$woff_font')
+woff.save()
+
+orig.close()
+"
+
+if [ -f $ttf_font ]; then
+  ttf2eot < $ttf_font > $eot_font
+fi
