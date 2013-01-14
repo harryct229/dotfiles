@@ -52,8 +52,13 @@
         (left-fringe . 30) (right-fringe . 0))
       cursor-type 'bar)
 
+;; Color Theme don't accumulate
+(defadvice load-theme (before tung/color-theme-dont-accumulate activate)
+  (dolist (theme (custom-available-themes))
+    (disable-theme theme)))
+
 (setq custom-theme-directory "~/.emacs.d/themes/")
-(load-theme 'twilight-anti-bright t)
+(load-theme 'tung t)
 
 (set-face-attribute 'mode-line nil :box nil)
 (set-face-attribute 'mode-line-highlight nil :box '(:line-width 1))

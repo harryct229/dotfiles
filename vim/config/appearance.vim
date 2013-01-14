@@ -18,7 +18,7 @@ set synmaxcol=350
 highlight SpellBad term=underline gui=underline
 
 set background=dark
-colorscheme solarized
+colorscheme badwolf
 
 if has('gui_running')
   set guioptions=ceg

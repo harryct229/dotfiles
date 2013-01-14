@@ -90,7 +90,7 @@
    `(default ((t (:background ,background :foreground ,foreground))))
    `(cursor ((t (:background ,cursor))))
    `(region ((t (:background ,selection))))
-   ; `(highlight ((t (:foreground ,blue-3 :background ,blue-3bg))))
+   `(highlight ((t (:background ,blue-4bg))))
    `(hl-line ((t (:background ,hl-line))))
    `(minibuffer-prompt ((t (:foreground ,orange-1 :background ,orange-1bg))))
    `(escape-glyph ((t (:foreground ,purple-1 :background , purple-1bg))))
@@ -98,8 +98,7 @@
    ;; Font-lock stuff
    `(font-lock-builtin-face ((t (:foreground ,yellow-1 :background ,yellow-1bg))))
    `(font-lock-constant-face ((t (:foreground ,purple-1 :background ,purple-1bg))))
-   ;; `(font-lock-comment-face ((t (:foreground ,comment :background ,gray-1bg :italic t))))
-   `(font-lock-comment-face ((t (:foreground ,comment :italic t))))
+   `(font-lock-comment-face ((t (:foreground ,comment :background ,gray-1bg :italic t))))
    `(font-lock-doc-face ((t (:foreground ,gray-1 :background ,gray-1bg))))
    `(font-lock-doc-string-face ((t (:foreground ,gray-1 :background ,gray-1bg))))
    `(font-lock-function-name-face ((t (:foreground ,red-1 :background ,red-1bg))))

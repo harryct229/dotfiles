@@ -1,0 +1,4 @@
+#!/bin/sh
+MPD_TRACK=$(mpc -f "%title%" current)
+MPD_ARTIST=$(mpc -f "%artist%" current)
+echo '#[bg=colour137,fg=colour16,bold] ♫' $MPD_TRACK '#[nobold]-#[bold]' $MPD_ARTIST '#[fg=colour254,bg=colour137,nobold]'

@@ -3,7 +3,7 @@
                   "C-x C-m" 'smex
                   "C-c C-m" 'smex-major-mode-commands
                   "C-x C-b" 'ibuffer
-                  "C-'" 'comment-or-uncomment-region-or-line
+                  "C-l" 'comment-or-uncomment-region-or-line
 
                   "C-+" 'text-scale-increase
                   "C--" 'text-scale-decrease
@@ -28,9 +28,7 @@
                   "C-c c" 'server-edit
                   "C-c d" 'dired-jump
 
-                  "C-c C-e" 'eval-and-replace
-
-                  "C-c C-v" 'toggle-input-method)
+                  "C-c C-e" 'eval-and-replace)
 
 
 (tung/fill-keymap minibuffer-local-map

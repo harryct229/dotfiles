@@ -56,7 +56,7 @@ theme.menu_bg_focus = "#000000"
 theme.menu_fg_focus = "#ff7f00"
 theme.menu_border_width = 0
 
-theme.bar_height = 18
+theme.bar_height = 16
 
 -- You can add as many variables as
 -- you wish and access them by using

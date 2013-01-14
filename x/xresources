@@ -5,7 +5,7 @@ Xft.rgba:       rgb
 Xft.hinting:    true
 Xft.hintstyle:  hintslight
 
-Emacs*font: Inconsolata:pixelsize=16:embolden=true
+Emacs*font: Inconsolata:pixelsize=18
 Emacs*toolbar: false
 Emacs*verticalScrollBars: false
 Emacs*horizontalScrollBars: false

@@ -38,7 +38,8 @@
 ;; (require 'config-electric)
 ;; (require 'config-hippie-expand)
 ;; (require 'config-popwin)
-(require 'config-typewriter)
+;; (require 'config-typewriter)
+(require 'config-magit)
 
 
 ;; Things that are not autoloaded

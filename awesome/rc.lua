@@ -108,7 +108,7 @@ mymainmenu = awful.menu({
     { "File Manager" , fileman       } ,
     { "Logout"       , quit_session_cleanup  } ,
     { "Suspend"      , "systemctl suspend" } ,
-    -- { "Hibernate"    , "systemctl hibernate" } ,
+    { "Hibernate"    , "systemctl hibernate" } ,
     { "Reboot"       , "systemctl reboot" } ,
     { "Shut Down"    , "systemctl poweroff" }
   }
@@ -196,13 +196,14 @@ for s = 1, screen.count() do
   -- Widgets that are aligned to the right
   local right_layout = wibox.layout.fixed.horizontal()
   if s == 1 then right_layout:add(wibox.widget.systray()) end
+
   right_layout:add(mytextclock)
   right_layout:add(mylayoutbox[s])
 
   -- Now bring it all together (with the tasklist in the middle)
   local layout = wibox.layout.align.horizontal()
   layout:set_left(left_layout)
-  layout:set_middle(mytasklist[s])
+  -- layout:set_middle(mytasklist[s])
   layout:set_right(right_layout)
 
   mywibox[s]:set_widget(layout)
@@ -544,28 +545,5 @@ function clean_for_completion (command, cur_pos, ncomp, shell)
     cur_pos = cur_pos + 1
   end
   return command, cur_pos
-end
--- }}}
-
--- {{{ Autostart
-function start_daemon(cmd)
-  local running = os.execute("ps -eF | grep -v grep | grep -w " .. cmd)
-  if (running ~= 0) then
-    os.execute(cmd .. " &")
-  end
-end
-
-daemons = {
-  "xcape -e 'Caps_Lock=Escape'",
-  "kupfer",
-  "nm-applet",
-  "dropboxd",
-  "emacs --daemon",
-  "thunar --daemon",
-  "compton -e 1 -b"
-}
-
-for k = 1, #daemons do
-  -- start_daemon(daemons[k])
 end
 -- }}}

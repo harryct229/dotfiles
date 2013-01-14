@@ -1,12 +1,12 @@
 
 # Platform specifics
-if [ "$OS" = "linux" ]; then
+# if [ "$OS" = "linux" ]; then
   alias open='xdg-open'
   alias pbp='xclip -selection clipboard -o'
   alias pbc='xclip -selection clipboard'
   alias mvim='vim'
   alias install='sudo pacman -S'
-fi
+# fi
 
 if [ "$OS" = "darwin" ]; then
   alias updatedb=/usr/libexec/locate.updatedb
@@ -55,17 +55,27 @@ alias bi='bundle install'
 # grep
 alias grep="grep --color"
 
+# Emacs
+alias e="emacsclient -c -t -a vim"
+alias ec="emacsclient -c -a vim"
+es() {
+  emacsclient -a vim "/sudo::$*"
+}
+
+# e() {
+  # if ([ -e "$1" ] && ! [ -w "$1" ]) || ( ! [ -e "$1" ] && ! [ -w "dirname $1" ]); then
+    # emacsclient -a vim "/sudo::$*"
+  # else
+    # emacsclient -a vim $*
+  # fi
+# }
+alias vim=e
 
 # Mics.
 alias h=history
 alias tm="tmux -2"
 alias ducks="du -cksh * | sort -rn | head -11"
 alias t='grep -e "^-" $TODO | grep -ve "\(@someday\|@cancelled\|@done\)"'
-alias e="emacsclient -a vim"
-alias ec="emacsclient -c -a vim"
-es() {
-  emacsclient -a vim "/sudo::$*"
-}
 
 # From Paul Irish
 alias pp='pygmentize -O style=monokai -f console256 -g'
@@ -113,4 +123,3 @@ extract() {
     echo "'$1' is not a valid file"
   fi
 }
-

@@ -156,48 +156,6 @@
   (align-regexp begin end "\\(\\s-*\\)=" 1 1))
 
 
-(defun fix-frame-width (width)
-  (interactive "P")
-  (if window-system
-      (set-frame-width (selected-frame) (or width 100))
-    (error "Cannot resize frame.")))
-
-(defun fix-window-width (width)
-  (interactive "P")
-  (enlarge-window (- (or width 100) (window-width)) 'horizontal))
-
-(defun fix-width (width)
-  (interactive "P")
-  (condition-case nil
-      (fix-window-width width)
-    (error
-     (condition-case nil
-         (fix-frame-width width)
-       (error "Cannot resize frame or window.")))))
-
-(defun fix-frame-height (height)
-  (interactive "P")
-  (if window-system
-      (set-frame-height (selected-frame) (or height 58))
-    (error "Cannot resize frame.")))
-
-(defun dock-to-1 ()
-  (interactive)
-  (if window-system
-      (progn
-        (set-frame-position (selected-frame) (- 600 (window-width)) 0)
-        (fix-frame-height 42))
-    (error "Cannot position frame.")))
-
-(defun dock-to-2 ()
-  (interactive)
-  (if window-system
-      (progn
-        (set-frame-position (selected-frame) (- 1920 (window-width)) 0)
-        (fix-frame-height 58))
-    (error "Cannot position frame.")))
-
-
 ;; Functions
 (defun tung/occurences (regex string)
   (let ((matches '())
@@ -285,8 +243,3 @@
 
 (defadvice other-window (before other-window-now activate)
   (when buffer-file-name (save-buffer)))
-
-(defadvice load-theme (after disable-bold-face activate)
-  (mapc (lambda (face)
-          (set-face-attribute face nil :weight 'normal :underline nil))
-        (face-list)))

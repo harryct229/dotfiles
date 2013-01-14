@@ -1,5 +1,5 @@
 
-(global-auto-complete-mode t)
+(require 'auto-complete-config)
 
 (defvar tung/ac-base-sources
   '(ac-source-filename
@@ -10,7 +10,6 @@
 
 (eval-after-load 'auto-complete
   '(progn
-     (require 'auto-complete-config)
      (ac-config-default)
      (setq-default ac-sources tung/ac-base-sources)
      (setq ac-auto-start nil

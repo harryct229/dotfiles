@@ -3,7 +3,7 @@
 (require 'eproject-extras)
 
 (eval-after-load 'eproject
-  '(prog
+  '(progn
      (setq eproject-completing-read-function
            'eproject--ido-completing-read)
 
