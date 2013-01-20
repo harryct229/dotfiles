@@ -7,7 +7,6 @@
   'interactive)
 
 (autoload 'slime-js "slime-js")
-(autoload 'css-helper-explain "css-helper" "" 'interactive)
 (autoload 'zap-up-to-char "misc"
   "Kill up to, but not including ARGth occurence of CHAR")
 

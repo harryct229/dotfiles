@@ -1,6 +1,5 @@
-
 (tung/fill-keymap (current-global-map)
-                  "C-x C-m" 'smex
+                  "M-m" 'smex
                   "C-c C-m" 'smex-major-mode-commands
                   "C-x C-b" 'ibuffer
                   "C-l" 'comment-or-uncomment-region-or-line
@@ -13,7 +12,7 @@
 
                   "C-c g" 'magit-status
                   "C-c f" 'ido-find-file
-                  "C-c p" 'eproject-find-file
+                  "M-p" 'eproject-find-file
                   "C-c a" 'eproject-ack
                   "C-c g" 'magit-status
                   "C-c b" 'ido-switch-buffer
@@ -45,8 +44,3 @@
 (tung/hot-key f8 "<f8>")
 (tung/hot-key f9 "<f9>")
 (tung/hot-key f10 "<f10>")
-
-;; Custom key sequences
-(define-prefix-command 'tung/custom-map)
-(global-set-key (kbd "C-q") 'tung/custom-map)
-(define-key tung/custom-map (kbd "ev") #'extract-variable)

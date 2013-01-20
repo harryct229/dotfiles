@@ -1,11 +1,6 @@
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/config"))
 
-;; Shared between configs
-(defvar tung/ignore-patterns
-  '(".git/" ".hg/" ".DS_Store" "tmp/" "log/" "logs/" "^[#]"))
-
-
 ;; Major modes
 (require 'config-coffee)
 (require 'config-css)
@@ -35,11 +30,13 @@
 (require 'config-eproject)
 (require 'config-occur)
 (require 'config-autopair)
+(require 'config-multiple-cursors)
+(require 'config-magit)
+(require 'config-simpleclip)
 ;; (require 'config-electric)
 ;; (require 'config-hippie-expand)
 ;; (require 'config-popwin)
 ;; (require 'config-typewriter)
-(require 'config-magit)
 
 
 ;; Things that are not autoloaded

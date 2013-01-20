@@ -1,0 +1,7 @@
+#!/bin/sh
+
+echo "Uptime:"
+uptime
+echo ""
+echo "Projects:"
+tmux ls

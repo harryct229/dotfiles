@@ -10,6 +10,9 @@
 (add-hook 'sgml-mode-hook #'tung/setup-html-mode)
 (add-hook 'nxml-mode-hook #'tung/setup-html-mode)
 
+;; (eval-after-load 'zencoding
+  ;; (define-key zencoding-mode-keymap (kbd "M-e") 'zencoding-expand-line))
+
 (eval-after-load 'auto-complete
   '(progn
      (add-to-list 'ac-modes 'html-mode)

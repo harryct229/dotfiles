@@ -2,8 +2,6 @@
 
 source /etc/X11/xinit/xinitrc.d/30-dbus
 
-systemd --user &
-
 xrdb -merge $HOME/.xresources
 xrandr --output LVDS --set BACKLIGHT 6
 
@@ -19,9 +17,11 @@ export GPG_AGENT_INFO
 export GNOME_KEYRING_CONTROL
 export GNOME_KEYRING_PID
 
+systemd --user &
+
 kupfer &
 dropboxd &
-emacs --daemon &
+# emacs --daemon &
 thunar --daemon &
 $HOME/local/bin/rescuetime &
 # compton -e 1 &

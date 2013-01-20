@@ -22,7 +22,7 @@ fi
 # if [[ $TERM == "dumb" ]]; then
 #   export CLICOLOR=0
 # else
-  export TERM="xterm-256color"
+  # export TERM="xterm-256color"
   export CLICOLOR=1
   if [ "$OS" = "linux" ]; then
     alias ls='ls --color=auto'
@@ -34,7 +34,7 @@ fi
 
 export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
 
-[ -n "$TMUX" ] && export TERM=xterm-256color
+[ -n "$TMUX" ] && export TERM=screen-256color
 
 # Stop C-S to freeze the terminal
 stty -ixon
@@ -50,4 +50,3 @@ export WORDCHARS='*?[]~&;!$%^<>'
 if [[ -a ~/.localrc ]]; then
   source ~/.localrc
 fi
-

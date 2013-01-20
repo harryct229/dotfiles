@@ -9,7 +9,7 @@
                                   yas-ido-prompt
                                   yas-completing-prompt))
 
-     (yas-load-directory yas-snippet-dirs)
+     ;; (yas-load-directory yas-snippet-dirs)
 
      (tung/fill-keymap yas-keymap
                        "C-e" #'yas-goto-end-of-active-field
