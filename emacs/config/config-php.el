@@ -5,37 +5,16 @@
 (defun tung/setup-php-mode ()
   (interactive)
   (tung/setup-programming-environment)
-  ;; (tung/set-doc-function #'tung/php-doc-function)
-  (c-set-offset 'case-label '+)
-  (c-set-offset 'arglist-intro #'tung/php-lineup-arglist-intro)
-  (c-set-offset 'arglist-close #'tung/php-lineup-arglist-close)
+  (php-enable-pear-coding-style)
   (zencoding-mode t))
 
 (add-hook 'php-mode-hook #'tung/setup-php-mode)
-
-(eval-after-load 'php-mode
-  '(progn
-     (setq php-manual-path "~/build/php-chunked-xhtml/"
-           php-basic-offset 2
-           php-blank-line-at-end-of-class t
-           php-blank-line-at-start-of-class t)))
 
 (eval-after-load 'auto-complete
   '(add-to-list 'ac-modes 'php-mode))
 
 (eval-after-load 'which-func
   '(add-to-list 'which-func-modes 'php-mode))
-
-
-(defun tung/php-lineup-arglist-intro (langelem)
-  (save-excursion
-    (goto-char (cdr langelem))
-    (vector (+ (current-column) c-basic-offset))))
-
-(defun tung/php-lineup-arglist-close (langelem)
-  (save-excursion
-    (goto-char (cdr langelem))
-    (vector (current-column))))
 
 (defun tung/php-doc-function ()
   "Lookup PHP documentation"

@@ -8,6 +8,11 @@
 
 (add-hook 'emacs-lisp-mode-hook #'tung/setup-emacs-lisp-mode)
 
+(add-hook 'after-change-major-mode-hook
+          (lambda ()
+            (unless (eq major-mode 'emacs-lisp-mode)
+              (eldoc-mode nil))))
+
 (eval-after-load 'config-hippie-expand
   '(add-hook 'emacs-lisp-mode-hook
              '(lambda ()

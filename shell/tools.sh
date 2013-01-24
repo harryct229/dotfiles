@@ -6,7 +6,7 @@ fi
 LOCAL=$HOME/local
 
 # PHP Composer
-alias composer='php composer.phar'
+# alias composer='php composer.phar'
 
 # Homebrew
 if [ -d $LOCAL/bin ]; then
@@ -88,4 +88,3 @@ else
   export EDITOR=mvim
   export GIT_EDITOR='mvim -v'
 fi
-

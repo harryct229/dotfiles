@@ -59,7 +59,7 @@ alias grep="grep --color"
 alias e="emacsclient -c -t -a vim"
 alias ec="emacsclient -c -a vim"
 es() {
-  emacsclient -a vim "/sudo::$*"
+  emacsclient -c -t -a vim "/sudo::$*"
 }
 
 # e() {

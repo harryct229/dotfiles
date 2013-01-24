@@ -21,7 +21,7 @@ systemd --user &
 
 kupfer &
 dropboxd &
-# emacs --daemon &
+emacs --daemon &
 thunar --daemon &
 $HOME/local/bin/rescuetime &
 # compton -e 1 &

@@ -8,7 +8,7 @@
 
      (define-project-type generic-scm (generic-git generic-hg)
        (or (look-for ".git") (look-for ".hg"))
-       :irrelevant-files (".DS_Store" "tmp/" "log/" "logs/" "vendor/" "elpa/"))
+       :irrelevant-files (".DS_Store" "tmp/" "log/" "logs/" "vendor/" "public/" "elpa/"))
 
      (define-project-type php (generic-scm)
        (or (look-for "composer") (look-for "composer.phar")

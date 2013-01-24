@@ -18,10 +18,14 @@
            evil-emacs-state-cursor '("orange" box))
 
      (evil-set-toggle-key "<f12>")
-     (evil-set-initial-state 'nrepl-mode 'emacs)
-     (evil-set-initial-state 'nrepl-popup-buffer-mode 'emacs)
-     (evil-set-initial-state 'epa-key-list-mode 'emacs)
-     (evil-set-initial-state 'ack-mode 'emacs)
+
+     (mapc (lambda (mode)
+             (evil-set-initial-state mode 'emacs))
+           '(nrepl-mode
+             nrepl-popup-buffer-mode
+             epa-key-list-mode
+             ack-mode
+             magit-log-edit-mode))
 
      (tung/fill-keymap evil-normal-state-map
                        "C-j" (icalled (next-line 10))
@@ -87,6 +91,30 @@
      (defadvice mc/keyboard-quit
        (after tung/return-evil-normal-state activate)
        (evil-normal-state))
+
+     ;; Change cursor in Terminal mode
+     ;; Some terminal support escape sequence
+     ;; iTerm and Konsole: "\033]50;CursorShape=?\x7"
+     ;;   - 2: underline
+     ;;   - 1: line
+     ;;   - 0: block
+     ;; Xterm: "\033[? q"
+     ;;   - 4: underline
+     ;;   - 6: line
+     ;;   - 2: block
+     ;; Some others require hack
+     (add-hook 'evil-insert-state-entry-hook
+               (lambda ()
+                 (unless (window-system)
+                   (send-string-to-terminal "\033]12;#00afff\007"))))
+     (add-hook 'evil-normal-state-entry-hook
+               (lambda ()
+                 (unless (window-system)
+                   (send-string-to-terminal "\033]12;gray\007"))))
+     (add-hook 'evil-emacs-state-entry-hook
+               (lambda ()
+                 (unless (window-system)
+                   (send-string-to-terminal "\033]12;orange\007"))))
      ))
 
 
