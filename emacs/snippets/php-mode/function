@@ -1,8 +1,0 @@
-# -*- mode: snippet -*-
-# name: function
-# key: fun
-# --
-${1:$$(yas-choose-value '("public " "protected " "private "))}function ${2:my_function}($3)
-{
-  $4
-}

@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-# name: Access Guard
-# key: g
-# --
-<?php defined('SYSPATH') or die('No direct access allowed.');
-$0

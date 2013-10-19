@@ -1,9 +1,0 @@
-# -*- mode: snippet -*-
-# name: module
-# key: module
-# --
-(function(exports) {
-  "use strict";
-
-
-})(typeof exports === "undefined" ? (self.${1:name}) : exports);

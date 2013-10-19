@@ -1,10 +1,10 @@
 [user]
-	name = Tung Dao
-	email = me@tungdao.com
+	name = Thanh Nguyen
+	email = congthanh991@gmail.com
 [credential]
 	helper = gnome-keyring
 [github]
-  user = tungd
+  user = harryct229
 [core]
 	excludesfile = ~/.gitignore
 	whitespace = trailing-space,space-before-tab
@@ -71,5 +71,5 @@
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path =
 [mergetool "sourcetree"]
-	cmd = /Users/tung/Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /Users/thanh/Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
