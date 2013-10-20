@@ -27,7 +27,6 @@ terminal   = "gnome-terminal"
 browser    = "google-chrome"
 editor     = "sublime"
 fileman    = "nautilus --no-desktop"
-findtool   = "synapse"
 editor_cmd = terminal .. " -e " .. editor
 configpath="/home/"..os.getenv("USER").."/.config/awesome/"
 

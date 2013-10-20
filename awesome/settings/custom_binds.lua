@@ -81,9 +81,9 @@ globalkeys = awful.util.table.join(globalkeys,
   awful.key({ modkey, "Shift" }, "n", function ()
     ror.run_or_raise(fileman, { class = "Nautilus" })
   end),
-  awful.key({ modkey, }, "F2", function ()
-    ror.run_or_raise(findtool, { class = "Synapse" })
-  end),
+  -- awful.key({ modkey, }, "F2", function ()
+  --   ror.run_or_raise(findtool, { class = "Synapse" })
+  -- end),
   awful.key({ modkey, "Shift" }, "s", function ()
     ror.run_or_raise(editor_cmd, { class = "Sublime_text" })
   end),
