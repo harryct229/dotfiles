@@ -1,8 +1,9 @@
 local awful = require("awful")
+local menubar = require("menubar")
 
 -- Mouse Binding
 root.buttons(awful.util.table.join(
-  awful.button({ }, 3, function () tmenu:toggle() end),
+  awful.button({ }, 3, function () mymainmenu:toggle() end),
   awful.button({ }, 4, awful.tag.viewnext),
   awful.button({ }, 5, awful.tag.viewprev)))
 
@@ -71,6 +72,7 @@ globalkeys = awful.util.table.join(globalkeys,
     nil,
     awful.util.getdir("cache") .. "/history_eval")
   end),
+  awful.key({ modkey }, "p", function() menubar.show() end),
 
   -- Raise or run
   awful.key({ modkey, "Shift" }, "c", function ()
