@@ -10,7 +10,7 @@ theme.font          = "Code Bold 8"
 
 theme.bg_normal     = "#050c12"
 theme.bg_focus      = theme.bg_normal
-theme.bg_urgent     = "#e73c1c"
+theme.bg_urgent     = theme.bg_normal
 theme.bg_minimize   = theme.bg_normal
 theme.bg_systray    = theme.bg_normal
 
@@ -19,7 +19,7 @@ theme.menu_focus    = "#050c12"
 
 theme.fg_normal     = "#ffffff"
 theme.fg_focus      = "#6da7d3"
-theme.fg_urgent     = "ffffff"
+theme.fg_urgent     = "#EC7F36"
 theme.fg_minimize   = theme.fm_focus
 
 theme.border_width  = 2
