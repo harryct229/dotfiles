@@ -296,7 +296,10 @@ for s = 1, screen.count() do
   -- middle_bottom_layout:fill_space(true)
 
   local right_bottom_layout = wibox.layout.fixed.horizontal()
-  right_bottom_layout:add(tsystray)
+
+  if s == 1 then
+    right_bottom_layout:add(tsystray)
+  end
   right_bottom_layout:add(separator)
   -- right_bottom_layout:add(mpdwidget)
   right_bottom_layout:add(baticon)

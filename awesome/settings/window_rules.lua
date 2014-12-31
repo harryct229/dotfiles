@@ -9,7 +9,9 @@ awful.rules.rules = {
                      border_color = beautiful.border_normal,
                      focus = awful.client.focus.filter,
                      keys = clientkeys,
-                     buttons = clientbuttons } },
+                     buttons = clientbuttons,
+		             maximized_vertical   = false,
+                     maximized_horizontal = false, } },
         {
                 rule = { class = "Skype" },
                 properties = { tag = tags[1][4] }

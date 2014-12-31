@@ -12,12 +12,6 @@
   ui = auto
 [branch]
 	autosetupmerge = true
-[branch "master"]
-  mergeoptions =--no-ff
-[branch "dev"]
-  mergeoptions =--no-ff
-[branch "development"]
-  mergeoptions =--no-ff
 [advice]
 	statusHints = false
 [push]

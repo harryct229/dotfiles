@@ -1,7 +1,9 @@
 
 theme = {}
 -- theme.wallpaper_cmd = { "awsetbg -a /home/thanh/Pictures/background.jpg" }
-theme.wallpaper = "/home/thanh/Pictures/background.jpg"
+-- theme.wallpaper_cmd = { "feh --bg-fill /home/framgia/Pictures/background.jpg" }
+theme.wallpaper = "/home/framgia/Pictures/background.jpg"
+
 theme.icon_theme = nil
 
 confdir = awful.util.getdir("config") .. "/themes/green"

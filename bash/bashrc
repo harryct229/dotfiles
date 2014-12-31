@@ -70,4 +70,7 @@ alias reloadrc="source $HOME/.bashrc"
 
 source $CLI/bash/prompt.bash
 
-
+# Load rbenv
+if [ -f /etc/profile.d/rbenv.sh ]; then
+    . /etc/profile.d/rbenv.sh
+fi

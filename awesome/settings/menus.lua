@@ -9,7 +9,7 @@ tentry = {
   { "Editor"       , editor_cmd    } ,
   { "File Manager" , fileman       } ,
   { "Logout"       , awesome.quit  } ,
-  { "Suspend"      , "dbus-send --system --print-reply --dest='org.freedesktop.UPower' /org/freedesktop/UPower org.freedesktop.UPower.Suspend" } ,
+  { "Suspend"      , suspend_cmd   } ,
   { "Hibernate"    , "dbus-send --system --print-reply --dest='org.freedesktop.UPower' /org/freedesktop/UPower org.freedesktop.UPower.Hibernate" } ,
   { "Reboot"       , "dbus-send --system --print-reply --dest='org.freedesktop.ConsoleKit' /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Restart" } ,
   { "Shut Down"    , "dbus-send --system --print-reply --dest='org.freedesktop.ConsoleKit' /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Stop" }

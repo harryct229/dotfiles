@@ -28,7 +28,8 @@ browser    = "google-chrome"
 editor     = "sublime"
 fileman    = "nautilus --no-desktop"
 editor_cmd = terminal .. " -e " .. editor
-configpath="/home/"..os.getenv("USER").."/.config/awesome/"
+configpath = "/home/"..os.getenv("USER").."/.config/awesome/"
+suspend_cmd = "/home/"..os.getenv("USER").."/.config/awesome/suspend.sh"
 
 -- THEME
 -- default theme
