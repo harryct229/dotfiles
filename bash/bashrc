@@ -74,3 +74,10 @@ source $CLI/bash/prompt.bash
 if [ -f /etc/profile.d/rbenv.sh ]; then
     . /etc/profile.d/rbenv.sh
 fi
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+### Added for android sdk
+export PATH=${PATH}:/home/framgia/dev/android/android-sdk-linux/tools
+export PATH=${PATH}:/home/framgia/dev/android/android-sdk-linux/platform-tools

@@ -30,6 +30,7 @@ fileman    = "nautilus --no-desktop"
 editor_cmd = terminal .. " -e " .. editor
 configpath = "/home/"..os.getenv("USER").."/.config/awesome/"
 suspend_cmd = "/home/"..os.getenv("USER").."/.config/awesome/suspend.sh"
+search_tool = "gnome-do"
 
 -- THEME
 -- default theme

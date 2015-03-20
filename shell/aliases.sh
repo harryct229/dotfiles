@@ -69,7 +69,7 @@ es() {
     # emacsclient -a vim $*
   # fi
 # }
-alias vim=e
+# alias vim=e
 
 # Mics.
 alias h=history

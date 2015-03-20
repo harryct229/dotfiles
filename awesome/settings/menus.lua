@@ -10,9 +10,9 @@ tentry = {
   { "File Manager" , fileman       } ,
   { "Logout"       , awesome.quit  } ,
   { "Suspend"      , suspend_cmd   } ,
-  { "Hibernate"    , "dbus-send --system --print-reply --dest='org.freedesktop.UPower' /org/freedesktop/UPower org.freedesktop.UPower.Hibernate" } ,
-  { "Reboot"       , "dbus-send --system --print-reply --dest='org.freedesktop.ConsoleKit' /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Restart" } ,
-  { "Shut Down"    , "dbus-send --system --print-reply --dest='org.freedesktop.ConsoleKit' /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Stop" }
+  { "Hibernate"    , "dbus-send --system --print-reply --dest='org.freedesktop.login1' /org/freedesktop/login1 org.freedesktop.login1.Manager.Hibernate boolean:true" } ,
+  { "Reboot"       , "dbus-send --system --print-reply --dest='org.freedesktop.login1' /org/freedesktop/login1 org.freedesktop.login1.Manager.Reboot boolean:true" } ,
+  { "Shut Down"    , "dbus-send --system --print-reply --dest='org.freedesktop.login1' /org/freedesktop/login1 org.freedesktop.login1.Manager.PowerOff boolean:true" }
 }
 
 mymainmenu = awful.menu({

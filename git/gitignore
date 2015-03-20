@@ -13,9 +13,7 @@
 *.so
 *~
 \#*\#
-Gemfile.lock
 .rspec
-*tags*
 !.gitkeep
 tmp
 *.orig
