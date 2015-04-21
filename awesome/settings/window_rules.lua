@@ -1,6 +1,11 @@
 local awful = require("awful")
 local beautiful = require("beautiful")
 
+if screen.count() > 1 then
+  main_screen = 2
+else
+  main_screen = 1
+end
 -- {{{ Rules
 awful.rules.rules = {
     -- All clients will match this rule.
@@ -14,7 +19,7 @@ awful.rules.rules = {
                      maximized_horizontal = false, } },
         {
                 rule = { class = "Skype" },
-                properties = { tag = tags[1][4] }
+                properties = { tag = tags[main_screen][4] }
         },
         {
                 rule = { instance = "plugin-container" },
