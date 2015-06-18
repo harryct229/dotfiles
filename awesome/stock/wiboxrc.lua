@@ -20,7 +20,7 @@ tsystray = wibox.widget.systray()
 mpdwidget = wibox.widget.textbox()
 vicious.register(mpdwidget, vicious.widgets.mpd,
 function (widget, args)
-  openTag = "<span> "
+  openTag = "<span color='white'> "
   closeTag = " </span>"
   if args["{state}"] == "Stop" then
     return openTag.."None Playing"..closeTag
@@ -53,7 +53,7 @@ end))
 clockicon = wibox.widget.imagebox()
 clockicon:set_image(beautiful.widget_clock)
 datewidget = wibox.widget.textbox()
-vicious.register(datewidget, vicious.widgets.date, " %a, %Y.%m.%d - %H:%M ", 60)
+vicious.register(datewidget, vicious.widgets.date, "<span color='white'> %a, %Y.%m.%d - %H: %M </span>", 60)
 -- Background for datewidget
 datebackground = wibox.widget.background()
 datebackground:set_bg("#964712")
