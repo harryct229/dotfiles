@@ -1,0 +1,25 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+		"Clipboard History",
+		"CoffeeScript"
+	],
+	"installed_packages":
+	[
+		"All Autocomplete",
+		"Better CoffeeScript",
+		"Clipboard History",
+		"CoffeeScript",
+		"CursorRuler",
+		"GitGutter",
+		"LESS",
+		"Numix Theme",
+		"Package Control",
+		"Ruby Block Converter",
+		"Ruby Slim",
+		"SCSS",
+		"Select Quoted",
+		"SideBarEnhancements"
+	]
+}

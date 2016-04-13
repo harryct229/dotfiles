@@ -1,0 +1,8 @@
+[
+  { "keys": ["ctrl+shift+r"], "command": "reindent" },
+  { "keys": ["ctrl+shift+backspace"], "command": "run_macro_file", "args": {"file": "Packages/Default/Delete Line.sublime-macro"} },
+  { "keys": ["ctrl+up"], "command": "select_lines", "args": {"forward": false} },
+  { "keys": ["ctrl+down"], "command": "select_lines", "args": {"forward": true} },
+  { "keys": ["ctrl+shift+j"], "command": "toggle_single_line_css" },
+  { "keys": ["ctrl+l"], "command": "select_line_without_new_line" }
+]

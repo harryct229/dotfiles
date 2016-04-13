@@ -89,6 +89,15 @@ globalkeys = awful.util.table.join(globalkeys,
   end),
   awful.key({ modkey, "Shift" }, "t", function ()
     ror.run_or_raise(terminal, { class = "Gnome-terminal" })
+  end),
+  awful.key({ modkey }, "=", function ()
+    awful.util.spawn("amixer -D pulse set Master 10%+")
+  end),
+  awful.key({ modkey }, "-", function ()
+    awful.util.spawn("amixer -D pulse set Master 10%-")
+  end),
+  awful.key({ modkey, "Shift" }, "-", function ()
+    awful.util.spawn("amixer -D pulse set Master toggle")
   end)
 )
 
