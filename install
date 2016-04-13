@@ -41,9 +41,9 @@ else
   link $CLI/ruby/irbrc $HOME/.irbrc
   link $CLI/ruby/pryrc $HOME/.pryrc
 
-  if [ "$OS" = "darwin" ]; then
-    cat $CLI/Custom.css > "$HOME/Library/Application Support/Google/Chrome/Default/User StyleSheets/Custom.css"
-  fi
+  # if [ "$OS" = "darwin" ]; then
+  #   cat $CLI/Custom.css > "$HOME/Library/Application Support/Google/Chrome/Default/User StyleSheets/Custom.css"
+  # fi
 
   if [ "$OS" = "linux" ]; then
     link $CLI/awesome $HOME/.config/awesome
@@ -51,7 +51,7 @@ else
     link $CLI/x/xresources $HOME/.xresources
     link $CLI/x/xmodmap $HOME/.xmodmap
     # link $CLI/x/terminalrc $HOME/.config/xfce4/terminal/terminalrc
-    cat $CLI/Custom.css > "$HOME/.config/google-chrome/Default/User StyleSheets/Custom.css"
+    # cat $CLI/Custom.css > "$HOME/.config/google-chrome/Default/User StyleSheets/Custom.css"
   fi
 fi
 

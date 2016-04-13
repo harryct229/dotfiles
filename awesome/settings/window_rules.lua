@@ -15,8 +15,7 @@ awful.rules.rules = {
                      focus = awful.client.focus.filter,
                      keys = clientkeys,
                      buttons = clientbuttons,
-		             maximized_vertical   = false,
-                     maximized_horizontal = false, } },
+                     size_hints_honor = false } },
         {
                 rule = { class = "Skype" },
                 properties = { tag = tags[main_screen][4] }

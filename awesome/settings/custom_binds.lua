@@ -81,9 +81,9 @@ globalkeys = awful.util.table.join(globalkeys,
   awful.key({ modkey, "Shift" }, "n", function ()
     ror.run_or_raise(fileman, { class = "Nautilus" })
   end),
-  awful.key({ modkey, }, "F2", function ()
-    ror.run_or_raise(search_tool, { class = "Gnome-Do" })
-  end),
+  -- awful.key({ modkey, }, "F2", function ()
+  --   ror.run_or_raise(search_tool, { class = "Gnome-Do" })
+  -- end),
   awful.key({ modkey, "Shift" }, "s", function ()
     ror.run_or_raise(editor_cmd, { class = "Sublime_text" })
   end),
@@ -118,9 +118,15 @@ for i = 1, keynumber do
   globalkeys = awful.util.table.join(globalkeys,
   awful.key({ modkey }, "#" .. i + 9, function ()
     local screen = mouse.screen
-    if tags[screen][i] then
-      awful.tag.viewonly(tags[screen][i])
+    local tag = awful.tag.gettags(screen)[i]
+    if tag then
+      awful.tag.viewonly(tag)
     end
+    -- awful.client.focus.filter()
+    -- awful.mouse.client.focus:raise()
+    -- if client.focus then  end
+    -- awful.client.focus.byidx(-1)
+    -- if client.focus then client.focus:raise() end
   end),
   awful.key({ modkey, "Shift" }, "#" .. i + 9, function ()
     if client.focus and tags[client.focus.screen][i] then

@@ -2,6 +2,7 @@ local awful = require("awful")
 local wibox = require("wibox")
 local vicious = require("vicious")
 local beautiful = require("beautiful")
+vicious.contrib = require("vicious.contrib")
 
 configpath = "/home/"..os.getenv("USER").."/.config/awesome/"
 beautiful.init(configpath .. "/themes/" .. "green" ..  "/theme.lua")
@@ -18,14 +19,29 @@ tsystray = wibox.widget.systray()
 -- mpdicon = wibox.widget.imagebox()
 -- mpdicon:set_image(beautiful.widget_mpd)
 mpdwidget = wibox.widget.textbox()
-vicious.register(mpdwidget, vicious.widgets.mpd,
+-- vicious.register(mpdwidget, vicious.widgets.mpd,
+-- function (widget, args)
+--   openTag = "<span color='white'> "
+--   closeTag = " </span>"
+--   if args["{state}"] == "Stop" then
+--     return openTag.."None Playing"..closeTag
+--   else
+--     return openTag..args["{Artist}"]..' - '.. args["{Title}"]..closeTag
+--   end
+-- end
+-- , 10)
+
+vicious.register(mpdwidget, vicious.contrib.radiotray,
 function (widget, args)
   openTag = "<span color='white'> "
   closeTag = " </span>"
-  if args["{state}"] == "Stop" then
+  if args["{State}"] == "Stop" then
     return openTag.."None Playing"..closeTag
+  elseif args["{State}"] == "not playing" then
+    return openTag..args["{Radio}"].."- Idle"..closeTag
   else
-    return openTag..args["{Artist}"]..' - '.. args["{Title}"]..closeTag
+    str = openTag..args["{Radio}"].." >> "..args["{Artist}"]..' - '.. args["{Song}"]..closeTag
+    return string.gsub(str, '&', '&amp;')
   end
 end
 , 10)
