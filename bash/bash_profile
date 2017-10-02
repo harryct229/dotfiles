@@ -3,4 +3,6 @@ export LANG=en_US.UTF-8
 
 # Load .bashrc
 source $HOME/.bashrc
+source $HOME/cli/bash/git-completion.bash
 
+source /usr/local/bin/virtualenvwrapper.sh

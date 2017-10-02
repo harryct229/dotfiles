@@ -85,6 +85,6 @@ if [ "$OS" = "linux" ]; then
   # Workaround for GVim iBus bug
   # gvim='gvim -f'
 else
-  export EDITOR=mvim
-  export GIT_EDITOR='mvim -v'
+  export EDITOR=vim
+  export GIT_EDITOR=vim
 fi

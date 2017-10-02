@@ -30,7 +30,7 @@ else
   link $CLI/linux/xmodmap $HOME/.xmodmap
 
   # tmux
-  link $CLI/linux/tmux.conf $HOME/.tmux.conf
+  link $CLI/tmux/tmux.conf $HOME/.tmux.conf
 
   # git
   link $CLI/git/gitconfig $HOME/.gitconfig
