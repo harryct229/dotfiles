@@ -32,7 +32,10 @@ fi
   fi
 # fi
 
-export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
+# export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
+alias grep="grep --color=auto"
+alias fgrep="fgrep --color=auto"
+alias egrep="egrep --color=auto"
 
 [ -n "$TMUX" ] && export TERM=screen-256color
 
